@@ -8,26 +8,25 @@ public class P03OpinionPoll {
 
         int n = Integer.parseInt(scanner.nextLine());
 
-        List<Person> personList = new ArrayList<>();   // creating a new Object
+        List<Person> personList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             String[] input = scanner.nextLine().split(" ");
             String name = input[0];
             int age = Integer.parseInt(input[1]);
 
-            Person currPerson = new Person(name, age); //creating and filling N-objects
+            Person currPerson = new Person(name, age);
             personList.add(currPerson);
         }
 
-        List<Person> over30List = new ArrayList<>();   //creating object where {int ages > 30}
+        List<Person> over30List = new ArrayList<>();
         for (Person person : personList) {
             if (person.getAge() > 30) {
                 over30List.add(person);
             }
         }
 
-       // Collections.sort(over30List, new SortByName()); //Using Comparator
         for (int i = 0; i < over30List.size(); i++) {
-            System.out.println(over30List.get(i)); //result from *toString* Method
+            System.out.println(over30List.get(i));
         }
 
     }
@@ -49,8 +48,8 @@ public class P03OpinionPoll {
             return this.age;
         }
 
-        public String toString() { // Without that Method --> com.company.ObjectsAndClasses.Exercise.P03OpinionPoll$Person@17a7cec2
-            return this.name + " - " + this.age; // With it, returns the values as single string
+        public String toString() {
+            return this.name + " - " + this.age;
         }
     }
 
